@@ -1,0 +1,19 @@
+This project is written in Java. MAIN class used to run programm - first argument defines input file, second defines output file.
+
+Programm takes new string in deduction and compares it with all types of how it could appear: from axiom/hypotesis or by deduction rule, if no type didn't match it writes this error to outup file
+
+Operation class is used to carry all information about current operation. It covers all types of operation, even constants is written there as 0-argument operation.
+
+ExpressionParser is used to parse given expression, so it returns Operation class containing expression given in string
+
+DeductionMaster class used to maintain all information about current deduction and it's checking progress. While working MAIN class inserts in this class new parsed Expressions and DeductionMaster either assimilate it or throws Exception when it cant understand how it is connected with previous. It also writes new deduction to output file (if needed). To understand what to write it defines how expression was made and prints suitable file from "newProofConstruct" folder.
+
+newProofConstruct contains templates to write new deduction based on given expression: _T - is "target" - last guess which needs to be inserted in deduction; _A, _B, _d are places for other (may be same) expressions.
+
+InproperConsequenceException - Exception thrown when problem with solving deduction occured
+
+AxiomOperationSupport contains all checking functions DeductionMaster uses. It was written to avoid overloading "heart" of programm with logic functions.
+
+
+Briefly summarising:
+Main gets arguments and opens files, then manages with head of file (such as hypotesis, answers, type of writing) and creates DeductionMaster instanse. Reading one by one expressions from file MAIN inserts it in DeductionMaster, which is trying to assimilate given expression. To assimilate, DeductionMaster gets functions from AxiomOperationSupport and apples them. When succeded it writes new deduction to file based on templates in newProofConstruct. Afterall MAIN closes files and ends programm.
