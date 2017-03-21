@@ -55,11 +55,11 @@ public class MAIN {
                     deductionMaster = new DeductionMaster(fileWriter,expressionParser.parse(tmpStr));
             }
 
-            //int VeryNeedCount = 0;
+            int VeryNeedCount = 0;
             while (in.hasNext()) {
                 deductionMaster.insert(expressionParser.parse(in.nextLine()));
-                //VeryNeedCount++;
-                //System.out.println("" + VeryNeedCount);
+                VeryNeedCount++;
+                System.out.println("" + VeryNeedCount);
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());

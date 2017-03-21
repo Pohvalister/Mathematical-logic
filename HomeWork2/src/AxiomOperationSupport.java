@@ -77,15 +77,13 @@ class AxiomOperationSupport {
         targetChange = new Operation("0");
         if (!checkAlmEqual(theXFormula, theZeroFormula, targetU))
             return -1;
-        targetChange = new Operation("(" + targetU + "')");
+        targetChange = new Operation("(" + targetU + ")\'");
         if (!checkAlmEqual(theXFormula, theXSFormula, targetU))
             return -1;
         targetChange = null;
         if (!checkAlmEqual(theXFormula, theNewFormula, targetU)) {
             return -1;
         }
-        /*if (guide (theXFormula,new Operation(targetU),getFreeVariables(targetChange)))
-            return 1;*/
         return 0;
     }
 

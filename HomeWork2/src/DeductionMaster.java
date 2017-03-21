@@ -199,18 +199,12 @@ public class DeductionMaster {
         }
         try {
             Integer tmp = axiomOperationSupport.compareQuantorAndFreeUnique(expr);
-            if (tmp != 1) {
+            if (tmp != -1) {
                 proofFromFile(AxiGuesPFile, expr.toString(), expr.toString(), target);
                 accept(expr);
                 return;
 
             }
-           /* if (tmp == 0) {
-                Operation term = axiomOperationSupport.targetChange;
-                Operation formula = expr.ch.get(0).ch.get(1).ch.get(1).ch.get(0);
-                Operation variable = expr.ch.get(0).ch.get(1).ch.get(0);
-                trigger = new InproperConsequenceException("терм  " + term.toString() + " не свободен для подстановки в формулу " + formula.toString() + " вместо переменной " + variable.toString(), counter);
-            }*/
         } catch (Exception e) {
             throw trigger;
         }
