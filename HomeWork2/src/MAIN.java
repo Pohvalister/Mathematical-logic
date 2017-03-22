@@ -27,7 +27,6 @@ public class MAIN {
             //System.out.println(Runtime.getRuntime().maxMemory());
             Scanner in = new Scanner(new File(args[0]));
             String tmpStr = in.nextLine();
-            //String vsadfkdsgdfsonnojdfnsdfsdfbjklb=tmpStr.split("\\|-")[0];
             if (tmpStr.contains("|-") && !tmpStr.split("\\|-")[0].equals("")) {
                 int i1 = 0, balance = 0;
                 String expr = "";
@@ -55,11 +54,11 @@ public class MAIN {
                     deductionMaster = new DeductionMaster(fileWriter,expressionParser.parse(tmpStr));
             }
 
-            int VeryNeedCount = 0;
+            //int VeryNeedCount = 0;
             while (in.hasNext()) {
                 deductionMaster.insert(expressionParser.parse(in.nextLine()));
-                VeryNeedCount++;
-                System.out.println("" + VeryNeedCount);
+                //VeryNeedCount++;
+                //System.out.println("" + VeryNeedCount);
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
