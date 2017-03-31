@@ -80,7 +80,8 @@ class Operation {
         ch = new ArrayList<>(Children);
         coveredString = sym + '(';
         for (Operation tmp : Children)
-            coveredString += tmp.toString();
+            coveredString += (tmp.toString()+',');
+        coveredString=coveredString.substring(0,coveredString.length()-1);
         coveredString += ')';
         freeVariables = new HashSet<>();
         for (Operation tmp : Children)
