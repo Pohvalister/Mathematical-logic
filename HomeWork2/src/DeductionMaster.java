@@ -158,7 +158,6 @@ public class DeductionMaster {
                         } else {
                             if (!needToConstructNewDeduction) {
                                 newProofwriter.write(expr.toString() + '\n');
-                                return;
                             } else
                                 proofFromFile(someQuanPFIle, exprQuantorPart.toString(), exprNonQuantorPart.toString(), expr.ch.get(0).ch.get(0).toString(), target);
                             accept(expr);
@@ -186,7 +185,6 @@ public class DeductionMaster {
                         } else {
                             if (!needToConstructNewDeduction) {
                                 newProofwriter.write(expr.toString() + '\n');
-                                return;
                             } else
                                 proofFromFile(allQuanPFile, exprNonQuantorPart.toString(), exprQuantorPart.toString(), expr.ch.get(1).ch.get(0).toString(), target);
                             accept(expr);
