@@ -167,7 +167,7 @@ public class DeductionMaster {
                 }
             }
         }
-        if (expr.ch.get(1).definer.equals("@")) {//predicate Consequence
+        if (expr.ch.size()>1&&expr.ch.get(1).definer.equals("@")) {//predicate Consequence
             for (Operation proof : oldProofToConsec) {
                 if (proof.definer.equals("->")) {
                     axiomOperationSupport.targetChange = null;

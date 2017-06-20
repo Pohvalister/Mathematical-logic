@@ -35,8 +35,10 @@ public class FormulaProver {
 
         fromReaderToWriter("src/proves/headPart.proof",writer,"","","");
         fromReaderToWriter("src/proves/more_1_RaisingDiff.proof",writer,valToStr(nLess-nMore-1),"","");
+        String temporal = "(p+"+valToStr(nLess-nMore-1) + ")\'";
         for (int i=0;i<nMore; i++){
-            fromReaderToWriter("src/proves/more_2_CycledRaiseBoth.proof",writer,valToStr(nLess-nMore-1+i),valToStr(i),"");
+            fromReaderToWriter("src/proves/more_2_CycledRaiseBoth.proof",writer,temporal,valToStr(i),"");
+            temporal+="\'";
         }
         fromReaderToWriter("src/proves/more_3_ConfirmCycle.proof",writer,valToStr(nLess-nMore-1),"","");
         for (int i=0;i<nMore;i++){
